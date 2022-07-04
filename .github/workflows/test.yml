@@ -1,0 +1,23 @@
+name: test
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+      - run: agec --version
+  test2:
+    defaults:
+      run:
+        working-directory: dist
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: aca/setup-agec@main
+      - run: pwd
+      - run: agec --version

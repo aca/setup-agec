@@ -1,0 +1,12 @@
+name: 'setup-agec'
+description: 'Install agec'
+icon: book-open
+color: '#FFFF00'
+inputs:
+  version:  # id of input
+    description: 'version'
+    required: false
+    default: '0.1.0'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
